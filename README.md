@@ -22,40 +22,40 @@ char *strstok(char *str, const char *delim);
 ## Usage 👩‍💻:
 ```c
 char string[] = "      I am who I am    ";
-  
-  int index = strfind(string, "who");
-  printf("Index of 'who': %d\n", index);
-  // Index of 'who': 11
-  
 
-  int count = strcnt(string, "am");
-  printf("Qntd. of 'am's: %d\n", count);
-  // Qntd. of 'am's: 2
+int index = strfind(string, "who");
+printf("Index of 'who': %d\n", index);
+// Index of 'who': 11
 
 
-  int *indexes = strrfind(string, "am");
-  
-  printf("Indexes of 'am': [");
-  for (int i = 0; indexes[i] != -1; i++)
-    printf("%d, ", indexes[i]);
-  printf("\b\b]\n");
-  // Indexes of 'am': [8, 17]
+int count = strcnt(string, "am");
+printf("Qntd. of 'am's: %d\n", count);
+// Qntd. of 'am's: 2
 
 
-  char *trimmed_string = strtrim(string, ' ');
-  printf("Trimmed string: '%s'\n", trimmed_string);
-  // Trimmed string: 'I am who I am'
+int *indexes = strrfind(string, "am");
+
+printf("Indexes of 'am': [");
+for (int i = 0; indexes[i] != -1; i++)
+  printf("%d, ", indexes[i]);
+printf("\b\b]\n");
+// Indexes of 'am': [8, 17]
 
 
-  char *next = strstok(trimmed_string, "am");
+char *trimmed_string = strtrim(string, ' ');
+printf("Trimmed string: '%s'\n", trimmed_string);
+// Trimmed string: 'I am who I am'
 
-  printf("Parts: [");
-  while (next) {
-    printf("'%s', ", strtrim(next, ' '));
-    next = strstok(NULL, "am");
-  }
-  printf("\b\b]\n");
-  // Parts: ['I', 'who I', '']
+
+char *next = strstok(trimmed_string, "am");
+
+printf("Parts: [");
+while (next) {
+  printf("'%s', ", strtrim(next, ' '));
+  next = strstok(NULL, "am");
+}
+printf("\b\b]\n");
+// Parts: ['I', 'who I', '']
 ```
 
 ## Standart Methods 🔎
