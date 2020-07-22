@@ -1,5 +1,5 @@
 # strings.c
-A collection of string methods that extend the standart string.h library methods.
+A collection of string methods that complement the standart string.h library methods.
 
 ## Methods 🈸:
 ```c
