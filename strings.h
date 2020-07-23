@@ -16,4 +16,7 @@ char *strtrim(char *str, const char c);
 /* Split string into string tokens */
 char *strstok(char *str, const char *delim);
 
+/* Return a string slice */
+char *strslc(const char *str, int init, int len);
+
 #endif

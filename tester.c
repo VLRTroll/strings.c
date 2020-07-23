@@ -30,16 +30,23 @@ int main() {
   printf("Trimmed string: '%s'\n", trimmed_string);
   // Trimmed string: 'I am who I am'
 
+  char *slice = strslc(string, index, 3);
+  printf("Sliced string (%d,14): '%s'\n", index, slice);
+  // Sliced string (11,14): 'who'
 
-  char *tokens = strstok(trimmed_string, "am");
+  slice = strslc(trimmed_string, 9, 10);
+  printf("Sliced string (9,13): '%s'\n", slice);
+  // Sliced string (9,13): 'who'
 
-  printf("Tokens: [");
-  while (tokens) {
-    printf("'%s', ", strtrim(tokens, ' '));
-    tokens = strstok(NULL, "am");
+  char *next = strstok(trimmed_string, "am");
+
+  printf("Parts: [");
+  while (next) {
+    printf("'%s', ", strtrim(next, ' '));
+    next = strstok(NULL, "am");
   }
   printf("\b\b]\n");
-  // Tokens: ['I', 'who I', '']
+  // Parts: ['I', 'who I', '']
 
   return 0;
 }

@@ -57,3 +57,12 @@ char *strstok(char *str, const char *delim) {
 
   return laststr; /* Return the begginig of the next string */
 }
+
+char *strslc(const char *str, int init, int len) {
+  int length = len < strlen(str) - init ? len : strlen(str) - init;
+  char* slice = (char*)malloc((length+1)*sizeof(*slice));
+  
+  memcpy(slice, str+init, length);
+  slice[length] = '\0';
+  return slice;
+}
