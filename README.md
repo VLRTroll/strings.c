@@ -15,6 +15,9 @@ int strcnt(const char *str, const char *substr);
 /* Remove a specific char from both sides of a string */
 char *strtrim(char *str, const char c);
 
+/* Return a string slice */
+char *strslc(const char *str, int init, int len);
+
 /* Split string into string tokens */
 char *strstok(char *str, const char *delim);
 ```
@@ -45,6 +48,11 @@ printf("\b\b]\n");
 char *trimmed_string = strtrim(string, ' ');
 printf("Trimmed string: '%s'\n", trimmed_string);
 // Trimmed string: 'I am who I am'
+
+
+char *slice = strslc(string, index, 3);
+printf("Sliced string (%d,14): '%s'\n", index, slice);
+// Sliced string (11,14): 'who'
 
 
 char *next = strstok(trimmed_string, "am");
