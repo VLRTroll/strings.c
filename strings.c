@@ -28,15 +28,15 @@ int strcnt(const char *str, const char *substr) {
 }
 
 char *strtrim(char *str, const char c) {
-  while (*str++ == ' ');          /* trim left */
+  while (*str++ == c);            /* trim left */
   char *estr = str + strlen(str); /* end of string */
-  while (*--estr == ' ');         /* trim left */
+  while (*--estr == c);           /* trim left */
   *++estr = '\0';                 /* set end of string */
 
   char *trimmed_string = (char *)malloc(sizeof(*trimmed_string) * (estr - str));
   strcpy(trimmed_string, --str);  /* copy trimmed string */
 
-  *estr = ' ';                    /* reset end of string */
+  *estr = c;                      /* reset end of string */
   return trimmed_string;
 }
 
