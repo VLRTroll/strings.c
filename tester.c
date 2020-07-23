@@ -30,6 +30,7 @@ int main() {
   printf("Trimmed string: '%s'\n", trimmed_string);
   // Trimmed string: 'I am who I am'
 
+
   char *slice = strslc(string, index, 3);
   printf("Sliced string (%d,14): '%s'\n", index, slice);
   // Sliced string (11,14): 'who'
@@ -37,6 +38,7 @@ int main() {
   slice = strslc(trimmed_string, 9, 10);
   printf("Sliced string (9,13): '%s'\n", slice);
   // Sliced string (9,13): 'who'
+
 
   char *next = strstok(trimmed_string, "am");
 
@@ -47,6 +49,11 @@ int main() {
   }
   printf("\b\b]\n");
   // Parts: ['I', 'who I', '']
+
+  char str[] = "          ";
+  char *trimmed_string2 = strtrim(str, ' ');
+  printf("Trimmed string: '%s'\n", trimmed_string2);
+  // Trimmed string: ''
 
   return 0;
 }
